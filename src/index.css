@@ -1,6 +1,12 @@
 /* ./src/index.css 상단에 추가 */
 @import "tailwindcss";
 
+/* 풀스크린 적용 */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
