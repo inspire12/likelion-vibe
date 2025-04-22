@@ -4,8 +4,9 @@ import WordCloud from '../components/WordCloud'
 
 export default function Home() {
   return (
-    <div>
-      <div className="h-screen relative">
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <div className="h-[60vh] relative">
         {/* 배경 이미지 */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -25,11 +26,18 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="py-10">
-        <Carousel />
-      </div>
-      <div className="py-10">
-        <WordCloud />
+
+      {/* Content Section */}
+      <div className="max-w-7xl mx-auto px-4 py-8 space-y-8">
+        {/* Carousel */}
+        <div className="bg-white bg-opacity-90 rounded-lg shadow-lg overflow-hidden">
+          <Carousel />
+        </div>
+
+        {/* Word Cloud */}
+        <div className="bg-white bg-opacity-90 rounded-lg shadow-lg overflow-hidden">
+          <WordCloud />
+        </div>
       </div>
     </div>
   )
