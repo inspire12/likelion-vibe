@@ -10,10 +10,8 @@ fi
 
 EXCLUDED_EXTENSIONS=("svg" "png" "jpg" "jpeg" "gif" "mp4" "mov" "webp" "ico" "mp3" "wav" "zip" "ttf" "woff" "woff2" "eot" "dmg" "pdf")
 
-# 임시 파일 생성
 TEMP_FILE=$(mktemp)
 
-# find + while로 실제 내용 누적
 while IFS= read -r file; do
   ext="${file##*.}"
   skip=false
@@ -35,7 +33,6 @@ while IFS= read -r file; do
   fi
 done < <(find "$TARGET_DIR" -type f)
 
-# 클립보드 복사
 cat "$TEMP_FILE" | pbcopy
 rm "$TEMP_FILE"
 
