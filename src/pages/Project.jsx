@@ -7,13 +7,17 @@ export default function Project() {
   useEffect(() => {
     fetch('https://api.github.com/users/inspire12/repos')
     .then(res => res.json())
-    .then(data => setRepos(data))
+    .then(data => {
+      // stargazers_count 기준 내림차순 정렬
+      const sorted = data.sort((a, b) => b.stargazers_count - a.stargazers_count)
+      setRepos(sorted)
+    })
     .catch(err => console.error(err))
   }, [])
   
   return (
     <section className="min-h-screen p-8 pt-24">
-      <h2 className="text-4xl mb-6">Projects</h2>
+      <h2 className="text-4xl mb-6">Projects (Star 순)</h2>
       <ul className="space-y-4">
         {repos.map(repo => (
           <li
@@ -26,7 +30,7 @@ export default function Project() {
               rel="noopener noreferrer"
               className="text-xl font-semibold hover:underline"
             >
-              {repo.name}
+              {repo.name} ({repo.stargazers_count} ★)
             </a>
             {repo.description && (
               <p className="text-gray-600 mt-1">{repo.description}</p>
