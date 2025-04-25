@@ -5,11 +5,13 @@ import Home from './pages/Home'
 import Project from './pages/Project'
 import History from './pages/History'
 import Contact from './pages/Contact'
+import GuidePopup from './components/GuidePopup'
 
 export default function App() {
   return (
     <BrowserRouter>
       <MenuBar />
+      <GuidePopup />
       {/* 메뉴바 높이만큼 패딩 추가 */}
       <div className="pt-16">
         <Routes>
