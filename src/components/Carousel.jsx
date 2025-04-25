@@ -18,13 +18,12 @@ const Carousel = () => {
     'https://picsum.photos/1200/400?random=1',
     'https://picsum.photos/1200/400?random=2',
     'https://picsum.photos/1200/400?random=3',
-    'https://picsum.photos/1200/400?random=4',
-    'https://picsum.photos/1200/400?random=5',
   ];
 
   return (
     <div className="w-full max-w-7xl mx-auto relative group">
-      <style>{`
+      <style>{
+      `
         .slick-prev,
         .slick-next {
           z-index: 1;
